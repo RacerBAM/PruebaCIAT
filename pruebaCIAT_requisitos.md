@@ -15,7 +15,7 @@ Como entregables se solicita lo siguiente:
 - **Sistema de información que ayude a la solución**
 
 Opcionales:
-- Despligue en Docker
+- Despliegue en Docker
 - Arquitectura del sistema
 
 Los requisitos anteriores deben estar contenidos en un repositorio de GitHub.
@@ -23,16 +23,17 @@ Los requisitos anteriores deben estar contenidos en un repositorio de GitHub.
 ## Requisitos Funcionales
 
 Los Requisitos Funcionales que identifique a partir del enunciado son:
-- El sistema necesita leer informacion de las bases de datos de Ubicacion y Zonas
-- El sistema debe identificar los animales ubicadas en zonas de deforestacion, comparando las ubciaciones de las 2 bases de datos para encontrar coincidencias
+- El sistema necesita leer informacion de las bases de datos de Ubicacion y Zonas.
+- El sistema debe identificar los animales ubicadas en zonas de deforestacion, comparando las ubciaciones de las 2 bases de datos para encontrar coincidencias.
 
+El enunciado asegura que ya existen bases de datos para los animales y zonas de deforestacion que registran sus ubicaciones en latitud y longitud, junto con su propietario o area si aplica. 
 
 ## Requisitos No Funcionales
 
 Los Requisitos No Funcionales que identifique a partir del enunciado son:
-- Un nivel de interoperabilidad: Idealmente, deberia poderse desplegar con Docker.
-- Un nivel de Portabilidad: Ademas de ser compatible con Docker, la prueba se debe desarrollar sobre un repositorio GitHub.
-- Costo cero: Se desea un rapido despliegue donde yo entrego un sistema ya listo.
+- Un nivel de **interoperabilidad**: Idealmente, deberia poderse desplegar con **Docker**.
+- Un nivel de **Portabilidad**: Ademas de ser compatible con Docker, la prueba se debe desarrollar sobre un repositorio **GitHub**.
+- **Costo** cero: Se desea un rapido despliegue donde yo entrego un sistema ya listo.
 
 ## Restricciones
    
