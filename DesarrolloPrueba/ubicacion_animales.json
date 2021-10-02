@@ -1,0 +1,20 @@
+[
+	{
+		"idanimal": 1,
+		"latitud": 10,
+		"longitud": 10,
+		"propietario": "Persona 1"
+	},
+	{
+		"idanimal": 2,
+		"latitud": 15,
+		"longitud": 15,
+		"propietario": "Persona 2"
+	},
+	{
+		"idanimal": 3,
+		"latitud": 25,
+		"longitud": 25,
+		"propietario": "Persona 1"
+	}
+]

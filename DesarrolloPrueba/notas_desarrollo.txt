@@ -1,0 +1,144 @@
+NOTAS
+-----
+
+SOBRE LOS REQUISITOS:
+
+- El enunciado no hace mencion de requisitos no funcionales deseados como,
+  por ejemplo, el nivel de seguridad, la capacidad de almacenaje o
+  flexibilidad deseado. Tampoco especifican restricciones, o requisitos
+  sobre la interfaz de usuario.
+  Se infieren algunos, especificados en el archivo de requisitos.
+  Tambien se levantaron unos requisitos funcionales, tambien especificados
+  en el archivo mencionado.
+
+- Como no hay requisitos de interfaz, se hara una muy sencilla: por
+  Terminal de Python con impresiones por pantalla e inputs.
+
+- El enunciado no especifica como estan estructurados las bases de datos.
+  Pueden ser SQL, no-relacionales o incluso archivos JSON.
+  Para facilitar el desarrollo de la prueba, se asume que son archivos
+  JSON y se usaron unos archivos JSON "placeholder" para el sistema.
+
+
+
+SOBRE LOS ARCHIVOS JSON:
+
+- Se asume que cada Zona y Animal tiene un ID unico, y los JSON placeholder
+  se contruyeron con esto en mente.
+
+- Se asume que Area de Deforestacion y Cambio de Cobertura son 2 atributos
+  distintos.
+
+- Se asume que Area de Deforestacion es un string tipo "NUMEROxNUMERO" como
+  "50x50" o "14x14".
+
+
+
+SOBRE LA IMPLEMENTACION:
+
+- Para el sistema, se creo 1 archivo PYTHON, el cual es "sistema.py"
+
+- El programa lee los 2 archivos JSON a listas de Python
+
+- El programa cuenta con 2 funciones:
+  - Funcion "animal_en_zonas" el cual recibe el ID de un animal, y busca
+    entre todas las zonas de la base de datos para ver en cuales zonas
+    el animal se encuentra. Se conto con la posibilidad de que unas
+    zonas pueden intersectar, por lo que retorna una lista de zonas.
+  - La funcion principal "main" que se ejecuta al abrir el programa.
+    Esta funcion pide al usuario si quiere correr un escaneo donde
+    cada animal se compara con cada zona, retornando la lista de
+    zonas de cada animal si los encuentra. Despues, cierra el programa.
+
+
+
+SOBRE DOCKER:
+
+- No estoy familiarizado con Docker. Escribire unas notas sobre como
+  usarlo con un paso a paso.
+
+- PASO A PASO CON DOCKER:
+  - Crear el programa con sus archivos.
+  - Programa debe abrir un puerto para Docker.
+  - Crear un DOCKERFILE, similar a Makefile. Convencion de:
+      FROM       (ambiente de programacion)
+      RUN        (instalaciones necesarias)
+      COPY       (directorio necesario)
+      EXPOSE     (puerto especificado en paso anterior)
+      WORKDIR    (directorio de trabajo)
+      ENTRYPOINT (en nuestro caso ["python", aplicacion PY])
+
+
+
+LOS JSON:
+
+[
+	{
+		"idzona": 1,
+		"latitud": 10,
+		"longitud": 10,
+		"area": "5x5",
+		"cobertura": "Cambio1",
+	}, 
+	{
+		"idzona": 1,
+		"latitud": 15,
+		"longitud": 15,
+		"area": "15x5",
+		"cobertura": "Cambio2",
+	},
+	{
+		"idzona": 1,
+		"latitud": 20,
+		"longitud": 20,
+		"area": "15x15",
+		"cobertura": "Cambio1",
+	}
+]
+
+
+[
+	{
+		"idanimal": 1,
+		"latitud": 10,
+		"longitud": 10,
+		"propietario": "Persona 1"
+	},
+	{
+		"idanimal": 2,
+		"latitud": 15,
+		"longitud": 15,
+		"propietario": "Persona 2"
+	},
+	{
+		"idanimal": 3,
+		"latitud": 25,
+		"longitud": 25,
+		"propietario": "Persona 1"
+	}
+]
+
+
+
+CODIGO DESCARTADO:
+
+##def area_deforest_coordenadas(lat, long, area):
+##    """
+##Calcula el area de deforestacion en cuanto a
+##longitud y latitud minimos y maximos, recibiendo
+##la longitud y latitud de una zona de deforestacion
+##y su area de deforestacion.
+##Entradas: 2 enteros y un string
+## Salidas: Una lista Python
+##    """
+##    salida = []
+##    # Tomar STRING y convertir a ENTEROs para operar
+##    lista_area = area.split("x")
+##    lista_area[0] = int(lista_area[0])
+##    lista_area[1] = int(lista_area[1])
+##    # Crear la lista, definiendo un rectangulo
+##    salida.append( (lat, long),
+##                   (lat*lista_area[0], long),
+##                   (lat, long*lista_area[1]),
+##                   (lat*lista_area[0], long*lista_area[1]) )
+##    return salida

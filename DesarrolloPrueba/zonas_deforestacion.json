@@ -1,0 +1,23 @@
+[
+	{
+		"idzona": 1,
+		"latitud": 10,
+		"longitud": 10,
+		"area": "5x5",
+		"cobertura": "Cambio1"
+	}, 
+	{
+		"idzona": 2,
+		"latitud": 15,
+		"longitud": 15,
+		"area": "15x5",
+		"cobertura": "Cambio2"
+	},
+	{
+		"idzona": 3,
+		"latitud": 20,
+		"longitud": 20,
+		"area": "15x15",
+		"cobertura": "Cambio1"
+	}
+]
